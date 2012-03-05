@@ -26,7 +26,7 @@ gem 'formtastic'
 gem 'flutie'
 gem 'bourbon'
 gem 'copycopter_client'
-gem 'airbrake'
+# gem 'airbrake'
 
 group :development do
   gem "heroku"

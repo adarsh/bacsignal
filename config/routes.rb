@@ -1,4 +1,6 @@
 Bacsignal::Application.routes.draw do
+  get "main/index"
+
   root :to => 'Clearance::Sessions#new'
 
   # The priority is based upon order of creation:
