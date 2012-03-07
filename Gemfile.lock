@@ -96,6 +96,12 @@ GEM
       actionpack (~> 3.0)
     gherkin (2.9.0)
       json (>= 1.4.6)
+    haml (3.1.4)
+    haml-rails (0.3.4)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0)
+      railties (~> 3.0)
     heroku (2.21.2)
       launchy (>= 0.3.2)
       rest-client (~> 1.6.1)
@@ -238,6 +244,7 @@ DEPENDENCIES
   factory_girl_rails
   flutie
   formtastic
+  haml-rails
   heroku
   high_voltage
   jquery-rails

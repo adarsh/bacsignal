@@ -26,6 +26,7 @@ gem 'formtastic'
 gem 'flutie'
 gem 'bourbon'
 gem 'copycopter_client'
+gem 'haml-rails'
 # gem 'airbrake'
 
 group :development do
