@@ -1,6 +1,6 @@
-var Bacsignal = Bacsignal || {};
+var Bacsignal = window.Bacsignal || {};
 
-var Bacsignal.Geo = {
+Bacsignal.Geo = {
   success: function(position) {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
