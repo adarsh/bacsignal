@@ -9,6 +9,24 @@ Bacsignal.Geo = {
     $('input#lng').val(longitude);
     $form = $('#dishes_form')
     $form.bind('ajax:success', dishesIndex).submit();
+
+
+    function dishesIndex(event, data){
+      _.each(data,
+          function(dish) {
+            var miles = distance(latitude, longitude,
+              dish.locations[0].lat, dish.locations[0].lng)
+
+            $("ul#dishes").append("<li>" +
+              dish.title +
+              " at " +
+              "<b>" + dish.restaurant_name + "</b>" +
+              " " + miles + " miles away" +
+              "</li>")
+          })
+    }
+
+
   },
 
   failure: function(failureMessage) {
@@ -24,9 +42,9 @@ Bacsignal.Geo = {
 
 Bacsignal.Geo.init();
 
-function dishesIndex(event, data){
-  _.each(data,
-      function(dish) {
-        $("ul#dishes").append("<li>" + dish.title + "</li>")
-      })
-}
+
+function distance(lat1, lng1, lat2, lng2) {
+  return (3958 * 3.1415926 * Math.sqrt((lat2 - lat1) * (lat2 - lat1) +
+        Math.cos(lat2 / 57.29578) * Math.cos(lat1 / 57.29578) *
+        (lng2 - lng1) * (lng2 - lng1)) / 180).toFixed(2);
+};
