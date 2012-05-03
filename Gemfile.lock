@@ -122,6 +122,7 @@ GEM
     less-rails (2.2.2)
       actionpack (>= 3.1)
       less (~> 2.2.0)
+    libv8 (3.3.10.4)
     linecache19 (0.5.12)
       ruby_core_source (>= 0.1.4)
     mail (2.3.0)
@@ -217,6 +218,8 @@ GEM
       activesupport (>= 3.1.0)
       rack
     term-ansicolor (1.0.7)
+    therubyracer (0.10.0)
+      libv8 (~> 3.3.10)
     thin (1.3.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -270,6 +273,7 @@ DEPENDENCIES
   sham_rack
   shoulda-matchers
   sprockets-redirect
+  therubyracer
   thin
   timecop
   twitter-bootstrap-rails

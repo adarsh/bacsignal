@@ -19,6 +19,7 @@ gem 'high_voltage'
 gem 'jquery-rails'
 gem 'paperclip'
 gem 'sass'
+gem 'therubyracer'
 gem 'thin'
 gem 'twitter-bootstrap-rails'
 
