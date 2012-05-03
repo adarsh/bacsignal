@@ -5,8 +5,10 @@ Bacsignal.Geo = {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
 
-    $('#latitude').text("Latitude: " + latitude);
-    $('#longitude').text("Longitude: " + longitude);
+    $('input#lat').val(latitude);
+    $('input#lng').val(longitude);
+    $form = $('#dishes_form')
+    $form.bind('ajax:success', dishesIndex).submit();
   },
 
   failure: function(failureMessage) {
@@ -21,3 +23,8 @@ Bacsignal.Geo = {
 };
 
 Bacsignal.Geo.init();
+
+function dishesIndex(event, data){
+  console.log(data[0]);
+  console.log(event)
+}
