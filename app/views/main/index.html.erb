@@ -1,8 +1,8 @@
 <h1 class="header">The BacSignal!</h1>
 
-<div id="dishes"></div>
+<ul id="dishes"></ul>
 
-<%= form_tag "#{dishes_path}.json", format: :json, method: :get, remote: true, id: :dishes_form do %>
+<%= form_tag dishes_path, format: :json, method: :get, remote: true, id: :dishes_form do %>
   <%= hidden_field_tag :lat %>
   <%= hidden_field_tag :lng %>
 <% end %>
