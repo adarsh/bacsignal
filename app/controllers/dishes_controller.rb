@@ -11,7 +11,6 @@ class DishesController < ApplicationController
     @lat = params[:lat]
     @lng = params[:lng]
 
-
     respond_with JSON.parse(open(search_url).read)['data']['dishes']
   end
 

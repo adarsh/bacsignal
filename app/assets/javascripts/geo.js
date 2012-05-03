@@ -25,6 +25,8 @@ Bacsignal.Geo = {
 Bacsignal.Geo.init();
 
 function dishesIndex(event, data){
-  console.log(data[0]);
-  console.log(event)
+  _.each(data,
+      function(dish) {
+        $("ul#dishes").append("<li>" + dish.title + "</li>")
+      })
 }
