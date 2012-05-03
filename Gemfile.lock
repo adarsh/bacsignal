@@ -60,6 +60,7 @@ GEM
       execjs
     coffee-script-source (1.2.0)
     columnize (0.3.6)
+    commonjs (0.2.6)
     copycopter_client (1.1.2)
       i18n (>= 0.5.0)
       json
@@ -116,6 +117,11 @@ GEM
     json (1.6.5)
     launchy (2.0.5)
       addressable (~> 2.2.6)
+    less (2.2.1)
+      commonjs (~> 0.2.6)
+    less-rails (2.2.2)
+      actionpack (>= 3.1)
+      less (~> 2.2.0)
     linecache19 (0.5.12)
       ruby_core_source (>= 0.1.4)
     mail (2.3.0)
@@ -221,6 +227,10 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    twitter-bootstrap-rails (2.0.6)
+      actionpack (>= 3.1)
+      less-rails (~> 2.2.0)
+      railties (>= 3.1)
     tzinfo (0.3.32)
     uglifier (1.2.3)
       execjs (>= 0.3.0)
@@ -262,4 +272,5 @@ DEPENDENCIES
   sprockets-redirect
   thin
   timecop
+  twitter-bootstrap-rails
   uglifier (>= 1.0.3)
