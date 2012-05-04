@@ -29,7 +29,8 @@ Bacsignal.Geo = {
       _.each(data, function(dish) {
 
         $("ul#dishes").append("<li>" +
-          dish.title +
+          "<b>" + dish.title + "</b>" +
+          " rated: " + dish.rating +
           " at " +
           "<b>" + dish.restaurant_name + "</b>" +
           " (" + dish.distance + " miles away)" +
