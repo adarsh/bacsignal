@@ -18,14 +18,21 @@ Bacsignal.Geo = {
     function dishesIndex(event, data){
       outside_data = data
 
+      // Adds .distance attribute for each dish
       _.each(data, function(dish) {
-        var miles = locationFinder(dish.locations)
+        dish.distance = locationFinder(dish.locations)
+      })
+
+      // Sorts by distance, ascending
+      var data = _.sortBy(data, function(dish) { return dish.distance })
+
+      _.each(data, function(dish) {
 
         $("ul#dishes").append("<li>" +
           dish.title +
           " at " +
           "<b>" + dish.restaurant_name + "</b>" +
-          " " + miles + " miles away" +
+          " (" + dish.distance + " miles away)" +
           "</li>")
 
       })
@@ -53,14 +60,16 @@ function distance (lat2, lng2) {
   return (3958 * 3.1415926 * Math.sqrt((lat2 - latitude) * (lat2 - latitude) +
         Math.cos(lat2 / 57.29578) * Math.cos(latitude / 57.29578) *
         (lng2 - longitude) * (lng2 - longitude)) / 180).toFixed(2)
-
 }
 
 function locationFinder (locations) {
-  var miles = distance (latitude, longitude, locations[0].lat, locations[0].lng)
+
+  var miles = distance (locations[0].lat, locations[0].lng)
+  var closest_location = locations[0]
 
   _.each(locations, function (place) {
-    var place_distance = distance (latitude, longitude, place['lat'], place['lng'])
+    // console.log(place)
+    var place_distance = distance (place['lat'], place['lng'])
 
     if (place_distance < miles)
     {
