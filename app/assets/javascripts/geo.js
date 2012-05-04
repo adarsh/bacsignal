@@ -9,6 +9,7 @@ Bacsignal.Geo = {
     latitude  = position.coords.latitude
     longitude = position.coords.longitude
 
+    // Form filling and submission
     $('input#lat').val(latitude)
     $('input#lng').val(longitude)
     $form = $('#dishes_form')
@@ -16,8 +17,8 @@ Bacsignal.Geo = {
 
     function dishesIndex(event, data){
       outside_data = data
-      _.each(data, function(dish) {
 
+      _.each(data, function(dish) {
         var miles = locationFinder(dish.locations)
 
         $("ul#dishes").append("<li>" +
@@ -37,7 +38,6 @@ Bacsignal.Geo = {
   },
 
   init: function() {
-
     if (geo_position_js.init()) {
       geo_position_js.getCurrentPosition (
           Bacsignal.Geo.success, Bacsignal.Geo.failure,
@@ -48,11 +48,11 @@ Bacsignal.Geo = {
 
 Bacsignal.Geo.init()
 
-function distance (lat1, lng1, lat2, lng2) {
+function distance (lat2, lng2) {
 
-  return (3958 * 3.1415926 * Math.sqrt((lat2 - lat1) * (lat2 - lat1) +
-        Math.cos(lat2 / 57.29578) * Math.cos(lat1 / 57.29578) *
-        (lng2 - lng1) * (lng2 - lng1)) / 180).toFixed(2)
+  return (3958 * 3.1415926 * Math.sqrt((lat2 - latitude) * (lat2 - latitude) +
+        Math.cos(lat2 / 57.29578) * Math.cos(latitude / 57.29578) *
+        (lng2 - longitude) * (lng2 - longitude)) / 180).toFixed(2)
 
 }
 
