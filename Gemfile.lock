@@ -97,6 +97,7 @@ GEM
       actionpack (~> 3.0)
     gherkin (2.9.0)
       json (>= 1.4.6)
+    google-analytics-rails (0.0.2)
     haml (3.1.4)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -257,6 +258,7 @@ DEPENDENCIES
   factory_girl_rails
   flutie
   formtastic
+  google-analytics-rails
   haml-rails
   heroku
   high_voltage
