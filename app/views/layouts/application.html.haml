@@ -49,4 +49,6 @@
       \==================================================
     / Placed at the end of the document so the pages load faster
     = javascript_include_tag "application"
-    = render :partial => ‘layouts/google_analytics’ if RAILS_ENV == ‘production’
+
+    = if Rails.env.production?
+      = render :partial => ‘layouts/google_analytics’ if RAILS_ENV == ‘production’
