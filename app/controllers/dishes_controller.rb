@@ -20,5 +20,3 @@ class DishesController < ApplicationController
     BASE_URL + "lat=#{@lat}&" + "lng=#{@lng}" + URL_BRIDGE + API_KEY
   end
 end
-
-  # 'http://api.tastedmenu.com/iphone/v2/tags/722/dishes?lat=42.36777&lng=-71.0914&market=1&&radius=1.0&api_key=VEIE3EuiFoS2Nr7nSWnfggOlxdnfMTx7ReDBMQyVf7UWTqLwanMHUd3fpSfo7vc'
