@@ -93,3 +93,14 @@ function locationFinder (locations) {
 
   return miles
 }
+
+<!-- ga tracking for offsite links clicks -->
+$(function(){
+  $("li a").each(function(){
+    $(this).click(function () {
+      if(pageTracker != undefined){
+        pageTracker._trackEvent('Offsite Links', 'Click', $(this).attr("href"));
+      }
+    });
+  });
+});
