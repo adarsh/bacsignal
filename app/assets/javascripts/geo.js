@@ -21,9 +21,6 @@ Bacsignal.Geo = {
       // Adds .distance attribute for each dish
       _.each(data, function(dish) {
         dish.distance = locationFinder(dish.locations)
-        if ( dish.rating == null ) {
-          dish.rating = 'unrated'
-        }
       })
 
       // Sorts by distance, ascending
@@ -31,16 +28,28 @@ Bacsignal.Geo = {
 
       _.each(data, function(dish) {
 
-        $("ul#dishes").append("<li>" +
-          "<a href='http://www.tastedmenu.com/dishes/" + dish.id + "'>" +
-          "<b>" + dish.title + "</b>" +
-          "</a>" +
-          " rated: " + dish.rating +
-          " at " +
-          "<b>" + dish.restaurant_name + "</b>" +
-          " (" + dish.distance + " miles away)" +
-          "</li>")
 
+        if (dish.rating == null) {
+          $("ul#dishes").append("<li>" +
+            "<a href='http://www.tastedmenu.com/dishes/" + dish.id + "'>" +
+            "<b>" + dish.title + "</b>" +
+            "</a>" +
+            " at " +
+            "<b>" + dish.restaurant_name + "</b>" +
+            " (" + dish.distance + " miles away)" +
+            "</li>")
+        }
+        else {
+          $("ul#dishes").append("<li>" +
+            "<a href='http://www.tastedmenu.com/dishes/" + dish.id + "'>" +
+            "<b>" + dish.title + "</b>" +
+            "</a>" +
+            " rated: " + dish.rating +
+            " at " +
+            "<b>" + dish.restaurant_name + "</b>" +
+            " (" + dish.distance + " miles away)" +
+            "</li>")
+        }
       })
     }
   },
