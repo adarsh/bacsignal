@@ -14,6 +14,17 @@
     %link(href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72")
     %link(href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114")
     = analytics_init if Rails.env.production?
+    :javascript
+      <!-- ga tracking for offsite links clicks -->
+      $(function(){
+      $("li a").each(function(){
+      $(this).click(function () {
+      if(pageTracker != undefined){
+      pageTracker._trackEvent('Offsite Links', 'Click', $(this).attr("href"));
+      }
+      });
+      });
+      });
 
   %body
     .navbar.navbar-fixed-top
