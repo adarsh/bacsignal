@@ -21,6 +21,9 @@ Bacsignal.Geo = {
       // Adds .distance attribute for each dish
       _.each(data, function(dish) {
         dish.distance = locationFinder(dish.locations)
+        if ( dish.rating == null ) {
+          dish.rating = 'unrated'
+        }
       })
 
       // Sorts by distance, ascending
