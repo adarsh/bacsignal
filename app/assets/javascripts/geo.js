@@ -94,7 +94,6 @@ function locationFinder (locations) {
   return miles
 }
 
-<!-- ga tracking for offsite links clicks -->
 $(function(){
   $("li a").each(function(){
     $(this).click(function () {
