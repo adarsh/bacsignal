@@ -32,7 +32,9 @@ Bacsignal.Geo = {
       _.each(data, function(dish) {
 
         $("ul#dishes").append("<li>" +
+          "<a href='http://www.tastedmenu.com/dishes/" + dish.id + "'>" +
           "<b>" + dish.title + "</b>" +
+          "</a>" +
           " rated: " + dish.rating +
           " at " +
           "<b>" + dish.restaurant_name + "</b>" +
@@ -72,7 +74,6 @@ function locationFinder (locations) {
   var closest_location = locations[0]
 
   _.each(locations, function (place) {
-    // console.log(place)
     var place_distance = distance (place['lat'], place['lng'])
 
     if (place_distance < miles)
